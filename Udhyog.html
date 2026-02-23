@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swasthyam Labh</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<form id="msform">
+  <ul id="progressbar">
+    <li class="active">Login</li>
+    <li>Symptoms</li>
+    <li>Allergies</li>
+    <li>Medicine</li>
+    <li>Documents</li>
+    <li>Image Upload</li>
+  </ul>
+
+  <!-- Step 1 -->
+  <fieldset>
+    <h2>Create your account</h2>
+    <label for="firstName">First Name*</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <label for="lastName">Last Name*</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <label for="phone">Phone Number*</label>
+    <input type="tel" id="phone" name="phone" required>
+    <label for="aadhar">Aadhar Card*</label>
+    <input type="text" id="Aadhar Card" name="Aadhar" required>
+    <input type="button" class="next action-button" value="Next">
+  </fieldset>
+  <fieldset>
+<label for="familyId">Family ID:</label>
+<input type="text" id="familyId" name="familyId" required>
+<div id="familyMembers"></div>
+
+   <input type="button" class="next action-button" value="Next">
+  </fieldset>
+  <!-- Step 2 -->
+  <fieldset>
+    <label for="symptom">Symptoms</label>
+    <input type="text" id="symptom" name="symptom"
+     list="symptomList">
+     <datalist id="symptomList">
+        <option value="Fever">
+        <option value="Cough">
+        <option value="Chest Pain">
+        <option value="Skin Rash">
+</datalist>
+     
+
+    <input type="button" class="previous action-button" value="Previous">
+    <input type="button" class="next action-button" value="Next">
+  </fieldset>
+
+  <!-- Step 3 -->
+  <fieldset>
+  <div id="TextBoxesGroup"></div>
+  <input type="button" value="Add Allergy" id="addButton">
+  <input type="button" value="Remove Allergy" id="removeButton">
+  <input type="button" class="previous action-button" value="Previous">
+  <input type="button" class="next action-button" value="Next">
+</fieldset>
+
+
+  <!-- Step 4 -->
+  <fieldset>
+    <label for="medicineName">Medicine Name:</label>
+    <input type="text" id="medicineName" name="medicineName">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea>
+    <input type="button" class="previous action-button" value="Previous">
+    <input type="button" class="next action-button" value="Next">
+  </fieldset>
+
+  <!-- Step 5 -->
+  <fieldset>
+    <label for="documents">Upload Documents:</label>
+    <input type="file" id="documents" name="documents" multiple>
+    <input type="button" class="previous action-button" value="Previous">
+    <input type="button" class="next action-button" value="Next">
+  </fieldset>
+ 
+  <!-- Step 6 -->
+  <form id="msform"> <!-- Steps omitted for brevity, keep your fieldsets here --> <!-- Final Step --> <fieldset> 
+   <label for="imageUpload">Upload an image:</label>
+    <input type="file" id="imageUpload" name="imageUpload" accept="image/*" multiple> <input type="submit" class="action-button" value="Submit"> <input type="button" class="previous action-button" value="Previous"> 
+    </fieldset> 
+</form>
