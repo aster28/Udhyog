@@ -26,3 +26,15 @@ var plainObject = {}; formData.forEach((value, key) => { if (plainObject[key]) {
 const modal = document.getElementById('uploadModal'); const openBtn = document.getElementById('openModal'); const closeBtn = document.querySelector('.close');
 
 const imageUpload = document.getElementById('imageUpload'); const preview = document.getElementById('preview'); openBtn.onclick = () => modal.style.display = 'block'; closeBtn.onclick = () => modal.style.display = 'none'; window.onclick = (event) => { if (event.target === modal) modal.style.display = 'none'; }; imageUpload.addEventListener('change', function() { const file = this.files[0]; if (file && file.type.startsWith('image/')) { const reader = new FileReader(); reader.onload = function(e) { preview.src = e.target.result; preview.style.display = 'block'; }; reader.readAsDataURL(file); } else { alert('Please select a valid image file.'); } }); 
+$(document).ready(function(){
+  $(".next").click(function(){
+    $(this).closest("fieldset").hide().next().show();
+    $("#progressbar li.active").next().addClass("active");
+  });
+
+  $(".previous").click(function(){
+    $(this).closest("fieldset").hide().prev().show();
+    $("#progressbar li.active").last().removeClass("active");
+  });
+});
+
