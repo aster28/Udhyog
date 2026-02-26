@@ -1,3 +1,5 @@
+$(document).ready(function () {
+
 var current_fs, next_fs, previous_fs;
 var animating = false;
 
@@ -19,6 +21,7 @@ $(".next").click(function () {
     duration: 600,
     complete: function () {
       current_fs.hide();
+      current_fs.css({opacity:1});   // 🔥 important fix
       animating = false;
     }
   });
@@ -42,6 +45,7 @@ $(".previous").click(function () {
     duration: 600,
     complete: function () {
       current_fs.hide();
+      current_fs.css({opacity:1});   // 🔥 important fix
       animating = false;
     }
   });
@@ -83,7 +87,7 @@ $("#msform").submit(function (e) {
   var formData = new FormData(this);
 
   $.ajax({
-    url: "/saveForm",
+    url: "/saveForm",   // ⚠️ must exist on server
     type: "POST",
     data: formData,
     processData: false,
@@ -95,4 +99,6 @@ $("#msform").submit(function (e) {
       alert("Error submitting form.");
     }
   });
+});
+
 });
